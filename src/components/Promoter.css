@@ -1,0 +1,155 @@
+/* =========================================================== Promoteur */
+.promoter {
+  position: relative;
+}
+
+.promoter__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.promoter__media {
+  display: flex;
+  justify-content: center;
+}
+
+.promoter__frame {
+  position: relative;
+  width: min(360px, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+  box-shadow: var(--shadow);
+}
+
+/* Petit liseré dégradé autour du portrait. */
+.promoter__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(74, 131, 255, 0.7), rgba(233, 185, 73, 0.5));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.promoter__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promoter__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+  background:
+    radial-gradient(400px 260px at 50% 0%, rgba(74, 131, 255, 0.18), transparent 65%),
+    var(--surface);
+}
+
+.promoter__placeholder svg {
+  color: var(--accent);
+}
+
+.promoter__placeholder strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.promoter__placeholder span {
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.promoter__placeholder code {
+  font-size: 0.78em;
+}
+
+.promoter__content .section-title {
+  margin-top: 18px;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+}
+
+.promoter__role {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.promoter__quote {
+  position: relative;
+  margin: 26px 0;
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.promoter__quote svg {
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.promoter__quote p {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.promoter__bio {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.promoter__sign {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.promoter__sign svg {
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .promoter__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .promoter__frame {
+    width: min(320px, 100%);
+  }
+
+  .promoter__content {
+    text-align: center;
+  }
+
+  .promoter__quote {
+    text-align: left;
+  }
+}

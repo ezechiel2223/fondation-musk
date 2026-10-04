@@ -1,0 +1,120 @@
+/* ---------------------------------------------------------------- Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.is-scrolled,
+.navbar.is-open {
+  background: rgba(6, 9, 20, 0.78);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom-color: var(--border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 76px;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar__link {
+  position: relative;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar__burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.navbar__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 18px var(--gutter) 32px;
+  border-top: 1px solid var(--border);
+  background: rgba(6, 9, 20, 0.96);
+  backdrop-filter: blur(18px);
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__mobile-link {
+  padding: 15px 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__mobile-link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 960px) {
+  .navbar__links,
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: inline-flex;
+  }
+
+  .navbar.is-open .navbar__mobile {
+    display: flex;
+    animation: nav-fade 0.28s ease both;
+  }
+}
+
+@keyframes nav-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,351 @@
+/* ============================================================ Apply hero */
+.apply-hero {
+  padding-block: clamp(40px, 6vw, 76px) 0;
+}
+
+.apply-hero__inner {
+  max-width: 780px;
+}
+
+.apply-hero h1 {
+  margin: 20px 0 0;
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+}
+
+.apply-hero__inner > p {
+  margin: 18px 0 0;
+  max-width: 640px;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.apply-hero__flow {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-top: 28px;
+}
+
+.apply-hero__flow li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.apply-hero__flow li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--grad-accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ======================================================= Apply layout */
+.apply {
+  padding-top: clamp(36px, 5vw, 56px);
+}
+
+.apply__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: start;
+}
+
+.apply__main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  box-shadow: var(--shadow);
+}
+
+.apply-form__head h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+}
+
+.apply-form__head p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.req {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+/* Le champ WhatsApp est mis en avant : c'est le canal de réponse. */
+.whatsapp-field {
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  background: rgba(37, 211, 102, 0.05);
+}
+
+.whatsapp-field > label {
+  color: #d6f7e3;
+}
+
+.whatsapp-field .icon-input > svg {
+  color: #25d366;
+}
+
+.amount-row {
+  display: flex;
+  gap: 10px;
+}
+
+.amount-row__input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.amount-row__input .input {
+  font-weight: 700;
+}
+
+.amount-row__currency {
+  width: 104px;
+  flex-shrink: 0;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.consent input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.consent--invalid {
+  color: #fecaca;
+}
+
+.consent--invalid input {
+  outline: 2px solid var(--danger);
+  outline-offset: 2px;
+}
+
+.apply-form__note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--faint);
+  margin: 0;
+}
+
+.apply-form__note svg {
+  color: var(--accent-2);
+}
+
+/* ============================================================= Aside */
+.apply__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 100px;
+}
+
+.aside-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.aside-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.02rem;
+}
+
+.aside-card h3 svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.aside-card p {
+  font-size: 0.9rem;
+}
+
+.aside-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.aside-card li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.aside-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--grad-accent);
+}
+
+.aside-card--whatsapp {
+  border-color: rgba(37, 211, 102, 0.3);
+  background: rgba(37, 211, 102, 0.05);
+}
+
+.aside-card--whatsapp h3 svg {
+  color: #25d366;
+}
+
+.aside-card--muted h3 svg {
+  color: var(--gold);
+}
+
+/* ========================================================= Success */
+.success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  background: linear-gradient(180deg, rgba(52, 211, 153, 0.09), rgba(255, 255, 255, 0.015));
+  box-shadow: var(--shadow);
+}
+
+.success-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: var(--success);
+}
+
+.success-card h2 {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+}
+
+.success-card p {
+  font-size: 1rem;
+}
+
+.success-card__summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin: 6px 0;
+}
+
+.success-card__summary > div {
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.success-card__summary dt {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.success-card__summary dd {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.success-card__ref {
+  font-family: var(--font-mono);
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+.success-card .alert {
+  width: 100%;
+}
+
+.success-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* ======================================================== Responsive */
+@media (max-width: 940px) {
+  .apply__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .apply__aside {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .success-card__summary {
+    grid-template-columns: 1fr;
+  }
+
+  .amount-row {
+    flex-direction: column;
+  }
+
+  .amount-row__currency {
+    width: 100%;
+  }
+}
+
